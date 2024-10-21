@@ -5,6 +5,9 @@ class Bot:
         self.chegou_em_objetivo = False
 
     def calcularDesempenho(self, objetivo):
+        if self.pos_atual[0] == objetivo[0] and self.pos_atual[1] == objetivo[1]:
+            print('CHEGOUUUU')
+            return 0
         # Calculando distancia até o objetivo usando distância manhattan
         return objetivo[0]-self.pos_atual[0] + objetivo[1]-self.pos_atual[1]
 
@@ -46,28 +49,23 @@ class Bot:
         #traduz vetor de movimentos
         movimento_atual = 0
         while not self.chegou_em_objetivo and movimento_atual < len(self.movimentos) / 2:
-            print(f"Movimento atual: {movimento_atual}, Posição atual: {self.pos_atual} - ", end=' ')
 
             if self.movimentos[movimento_atual*2] == False:
                 # movimento vertical
                 if self.movimentos[movimento_atual*2+1] == False:
                     # up
                     self.mover(mapa, 'up')
-                    print('Up')
                 else:
                     # down
                     self.mover(mapa, 'down')
-                    print('Down')
             else:
                 # movimento horizontal
                 if self.movimentos[movimento_atual*2+1] == False:
                     # right
                     self.mover(mapa, 'right')
-                    print('Right')
                 else:
                     # left
                     self.mover(mapa, 'left')
-                    print('Left')
             
             movimento_atual+=1
         
