@@ -7,9 +7,9 @@ class Bot:
     def calcularDesempenho(self, objetivo):
         if self.pos_atual[0] == objetivo[0] and self.pos_atual[1] == objetivo[1]:
             print('CHEGOUUUU')
-            return 0
+            
         # Calculando distancia até o objetivo usando distância manhattan
-        return objetivo[0]-self.pos_atual[0] + objetivo[1]-self.pos_atual[1]
+        return abs(objetivo[0] - self.pos_atual[0]) + abs(objetivo[1] - self.pos_atual[1])
 
 
     def mover(self, mapa, direcao):
@@ -45,7 +45,6 @@ class Bot:
 
         #inicializa posicao
         self.pos_atual = mapa.pos_inicial
-
         #traduz vetor de movimentos
         movimento_atual = 0
         while not self.chegou_em_objetivo and movimento_atual < len(self.movimentos) / 2:
