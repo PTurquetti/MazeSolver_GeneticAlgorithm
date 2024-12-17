@@ -17,12 +17,13 @@ def mutacao(movimento, taxa_mutacao):
     
     return movimento
 
-def algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao):
+def algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao, nlinhas, ncolunas, matriz_mapa):
 
     bots = []
     resultados = []
 
     #criar mapa
+    """
     nlinhas = 5
     ncolunas = 10
     matriz_mapa = [
@@ -32,11 +33,13 @@ def algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao):
                 [0, 0, 1, 0, 0, 1, 0, 0, 1, 0],
                 [0, 0, 0, 0, 0, 0, 0, 1, 1, 0]
                 ]
+    """
     pos_inicial = [0, 0]
-    pos_final = [4, 9]
+    pos_final = [nlinhas-1, ncolunas-1]
+    
 
     mapa = Map(nlinhas, ncolunas, matriz_mapa, pos_inicial, pos_final)
-    mapa.printMap(matriz=None)
+    #mapa.printMap(matriz=None)
 
 
     #criar vetor de movimento da primeira geração
@@ -64,6 +67,7 @@ def algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao):
         print(f"Geração {a+1} - Melhor Resultado: {resultados[0][1]}")
 
         if resultados[0][1] == 0:
+            # Encontrou solucao
             tem_solucao = True
             mapa.imprimeCaminho(resultados[0][0])
             break

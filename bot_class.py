@@ -5,8 +5,9 @@ class Bot:
         self.chegou_em_objetivo = False
 
     def calcularDesempenho(self, objetivo):
-        if self.pos_atual[0] == objetivo[0] and self.pos_atual[1] == objetivo[1]:
+        if self.chegou_em_objetivo:
             print('CHEGOUUUU')
+            return 0
             
         # Calculando distancia até o objetivo usando distância manhattan
         return abs(objetivo[0] - self.pos_atual[0]) + abs(objetivo[1] - self.pos_atual[1])
@@ -36,7 +37,7 @@ class Bot:
             print("Movimento nao identificado")
         
         # verifica se chegou no objetivo
-        if self.pos_atual == mapa.pos_final:
+        if self.pos_atual[0] == mapa.pos_final[0] and self.pos_atual[1] == mapa.pos_final[1]:
             self.chegou_em_objetivo = True
         
             
@@ -74,6 +75,4 @@ class Bot:
 
         #retornando valores
         return self.movimentos, desempenho
-
-
     

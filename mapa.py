@@ -35,13 +35,13 @@ class Map:
                 # Movimento vertical
                 if movimento[i * 2 + 1] == False:
                     # Para cima (up)
-                    if linha > 0 and matriz_resultado[linha-1][coluna] == 0:
+                    if linha > 0 and matriz_resultado[linha-1][coluna] != 1:
                         nova_pos = [linha - 1, coluna]
                         sequencia_movimentos.append('Up')
                         moveu = True
                 else:
                     # Para baixo (down)
-                    if linha < self.n_linhas-1 and matriz_resultado[linha+1][coluna] == 0:
+                    if linha < self.n_linhas-1 and matriz_resultado[linha+1][coluna] != 1:
                         nova_pos = [linha + 1, coluna]
                         sequencia_movimentos.append('Down')
                         moveu = True
@@ -49,13 +49,13 @@ class Map:
                 # Movimento horizontal
                 if movimento[i * 2 + 1] == False:
                     # Para a direita (right)
-                    if coluna < self.n_colunas-1 and matriz_resultado[linha][coluna+1] == 0:
+                    if coluna < self.n_colunas-1 and matriz_resultado[linha][coluna+1] != 1:
                         nova_pos = [linha, coluna + 1]
                         sequencia_movimentos.append('Right')
                         moveu = True
                 else:
                     # Para a esquerda (left)
-                    if coluna > 0 and matriz_resultado[linha][coluna-1] == 0:
+                    if coluna > 0 and matriz_resultado[linha][coluna-1] != 1:
                         nova_pos = [linha, coluna - 1]
                         sequencia_movimentos.append('Left')
                         moveu = True
@@ -67,8 +67,11 @@ class Map:
                     matriz_resultado[pos_atual[0]][pos_atual[1]] = 2 
                 else:
                     # passou limite do mapa, deu erro
-                    print("Movimento fora dos limites do mapa:", nova_pos)
+                    print("Movimento fora dos limites do mapa: ", nova_pos)
                     break  
+            
+            if pos_atual == self.pos_final:
+                break
 
         self.printMap(matriz_resultado)
         print(sequencia_movimentos)
