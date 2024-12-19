@@ -1,12 +1,12 @@
 import tkinter as tk
 from tkinter import ttk
-from gerenciador import algGenetico
 from tkinter import *
 import random
+from gerenciador import algGenetico
 
 #estabelecer parametros
 n_bots = 24
-n_movimentos = 25
+n_movimentos = 30
 #n_geracoes = 1000
 max_geracoes = 5000
 taxa_mutacao = 0.02

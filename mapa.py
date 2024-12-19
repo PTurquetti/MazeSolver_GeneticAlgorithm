@@ -1,3 +1,7 @@
+import tkinter as tk
+from tkinter import ttk
+from tkinter import *
+
 class Map:
     def __init__(self, n_linhas, n_colunas, casas, pos_inicial, pos_final):
         self.n_linhas = n_linhas
@@ -16,6 +20,30 @@ class Map:
             for j in range(self.n_colunas):
                 print(matriz[i][j], end=' ')
             print()
+
+        # Cria a janela do mapa
+        janelaSolucao = tk.Tk()
+        janelaSolucao.title(f'Solução do Mapa:')
+
+        # Inicializa a matriz
+        
+
+        def definirBackground(matriz, i, j):
+            if matriz[i][j] == 0:
+                return 'white'
+            elif matriz[i][j] == 1:
+                return 'black'
+            elif matriz[i][j] == 2:
+                return 'red'
+            
+
+        for i in range(len(matriz)):
+            for j in range(len(matriz[0])):
+                # Cria um Label para cada célula e associa um clique para alterar a cor
+                label = tk.Label(janelaSolucao, width=6, height=3, bg=definirBackground(matriz, i, j))
+                label.grid(row=i, column=j, padx=1, pady=1)
+                
+
     
 
     def imprimeCaminho(self, movimento):

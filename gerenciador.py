@@ -36,6 +36,7 @@ def algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao, nlinhas, ncolu
     """
     pos_inicial = [0, 0]
     pos_final = [nlinhas-1, ncolunas-1]
+    n_movimentos = int(nlinhas * ncolunas * 0.8)
     
 
     mapa = Map(nlinhas, ncolunas, matriz_mapa, pos_inicial, pos_final)
