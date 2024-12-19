@@ -17,6 +17,21 @@ def mutacao(movimento, taxa_mutacao):
     
     return movimento
 
+def definirNumMovimentos(matriz):
+    count = 0
+    for i in range(len(matriz)):
+        for j in range(len(matriz[0])):
+            if matriz[i][j] == 0:
+                count+=1
+    
+    result = int(count*1.5)
+
+    if result % 2 != 0:
+        result+=1
+        # Garente que numero de movimentos seja par
+    
+    return result
+
 def algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao, nlinhas, ncolunas, matriz_mapa):
 
     bots = []
@@ -36,8 +51,8 @@ def algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao, nlinhas, ncolu
     """
     pos_inicial = [0, 0]
     pos_final = [nlinhas-1, ncolunas-1]
-    n_movimentos = int(nlinhas * ncolunas * 0.8)
-    
+    n_movimentos = definirNumMovimentos(matriz_mapa)
+    #n_movimentos = 20
 
     mapa = Map(nlinhas, ncolunas, matriz_mapa, pos_inicial, pos_final)
     #mapa.printMap(matriz=None)
@@ -63,6 +78,7 @@ def algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao, nlinhas, ncolu
 
         #ordenar arrays de movimento de acordo com o desempenho
         resultados.sort(key=lambda x:x[1])
+        bots.clear()
 
         #printando resultados
         print(f"Geração {a+1} - Melhor Resultado: {resultados[0][1]}")
@@ -74,7 +90,6 @@ def algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao, nlinhas, ncolu
             break
 
 
-        bots.clear()
         for x in range(int(n_bots / 2)):
             mov_filho1, mov_filho2 = crossoverSimples(resultados[x][0], resultados[x+1][0], n_movimentos)
 
