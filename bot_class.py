@@ -5,9 +5,9 @@ class Bot:
         self.chegou_em_objetivo = False
 
     def calcularDesempenho(self, objetivo):
-        if self.chegou_em_objetivo:
-            print('CHEGOUUUU')
-            return 0
+        #if self.chegou_em_objetivo:
+            #print('CHEGOUUUU')
+            #return 0
             
         # Calculando distancia até o objetivo usando distância manhattan
         return abs(objetivo[0] - self.pos_atual[0]) + abs(objetivo[1] - self.pos_atual[1])

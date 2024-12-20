@@ -13,8 +13,6 @@ taxa_mutacao = 0.02
 
 #algGenetico(n_bots, n_movimentos, max_geracoes, taxa_mutacao, mapa)
 
-def cor_aleatoria():
-    return f'#{random.randint(0, 255):02x}{random.randint(0, 255):02x}{random.randint(0, 255):02x}'
 
 def gerar_mapa(nlinhas, ncolunas, janelaConfig):
     """Gera o mapa com dimensões especificadas e implementa clique para alterar células."""
@@ -70,7 +68,6 @@ def gerar_mapa(nlinhas, ncolunas, janelaConfig):
 
     janelaMapa.mainloop()
 
-
 def iniciar_janela_principal():
     """Inicia a janela principal para configurar o mapa."""
     janelaConfig = tk.Tk()
@@ -95,11 +92,10 @@ def iniciar_janela_principal():
         janelaConfig,
         text='Gerar Mapa',
         command=lambda: gerar_mapa(nlinhas, ncolunas, janelaConfig),
-        background=cor_aleatoria()
+        background='Blue'
     )
     botaoGerar.grid(row=1, column=2, padx=10, pady=10)
 
     janelaConfig.mainloop()
-
 
 iniciar_janela_principal()

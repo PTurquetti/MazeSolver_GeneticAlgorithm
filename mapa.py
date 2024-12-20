@@ -49,9 +49,12 @@ class Map:
     def imprimeCaminho(self, movimento):
     
         sequencia_movimentos=[]
+        casas = []
         pos_atual = self.pos_inicial  # Faz uma cópia para evitar alterar a posição inicial
         matriz_resultado = self.matriz_casas
         matriz_resultado[self.pos_inicial[0]][self.pos_inicial[1]] = 2
+
+        casas.append(pos_atual)
 
         for i in range(len(movimento) // 2):  # Dividindo o comprimento da lista por 2
             linha = pos_atual[0]
@@ -92,6 +95,17 @@ class Map:
             if moveu:
                 if 0 <= nova_pos[0] < self.n_linhas and 0 <= nova_pos[1] < self.n_colunas:
                     pos_atual = nova_pos  # Atualiza a posição
+
+                    # Se já esteve antes na casa -> deleta o caminho feito entre o primeiro e o segundo encontro na casa
+                    if pos_atual in casas:
+                        index_visita_anterior = casas.index(pos_atual)
+
+                        for _ in range(len(casas) - index_visita_anterior):
+                            ultima = casas.pop()
+                            matriz_resultado[ultima[0]][ultima[1]] = 0
+                            sequencia_movimentos.pop()
+
+                    casas.append(pos_atual)
                     matriz_resultado[pos_atual[0]][pos_atual[1]] = 2 
                 else:
                     # passou limite do mapa, deu erro
