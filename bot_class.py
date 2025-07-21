@@ -12,7 +12,6 @@ class Bot:
         # Calculando distancia até o objetivo usando distância manhattan
         return abs(objetivo[0] - self.pos_atual[0]) + abs(objetivo[1] - self.pos_atual[1])
 
-
     def mover(self, mapa, direcao):
         linha = self.pos_atual[0]
         coluna = self.pos_atual[1]
@@ -39,8 +38,6 @@ class Bot:
         # verifica se chegou no objetivo
         if self.pos_atual[0] == mapa.pos_final[0] and self.pos_atual[1] == mapa.pos_final[1]:
             self.chegou_em_objetivo = True
-        
-            
         
     def percorrerMapa(self, mapa):
 

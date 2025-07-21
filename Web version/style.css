@@ -1,0 +1,158 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin: 0px 0px;
+}
+
+body{
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    color: rgb(14, 14, 14);
+    word-spacing: 0.05em;
+    letter-spacing: -0.02em;
+    
+    font-size: 2.5vmin;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+
+    min-height: 3.2vmin;
+    margin-top: 0.6vmin;
+    padding-left: 0.6vmin;
+    padding-right: 0.6vmin;
+    padding-top: 0.5vmin;
+    padding-bottom: 0.5vmin;
+
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+label{
+    color: rgb(14, 14, 14);
+    word-spacing: 0.05em;
+    letter-spacing: -0.02em;
+    
+    font-size: 2.5vmin;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+
+    min-height: 3.2vmin;
+    margin-top: 0.6vmin;
+    padding-left: 0.6vmin;
+    padding-right: 0.6vmin;
+    padding-top: 0.5vmin;
+    padding-bottom: 0.5vmin;
+}
+
+
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    min-width: 60%;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.div_inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.div_inputs input{
+    width: 50px;
+    text-align: center;
+}
+
+#map_section{
+    display: none;
+}
+
+#map_ui{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+}
+
+.map{
+    display: grid;
+    background-color: gray;
+    width: max-content;
+    padding: 10px;
+    border-radius: 11px;
+}
+
+
+.mapCell{
+    width: 40px;
+    height: 40px;
+    margin: 1px 1px;
+    border-radius: 4px;
+}
+
+.mapCell[data-status="0"]{
+    background-color: white;
+}
+
+.mapCell[data-status="1"]{
+    background-color: black;
+}
+
+.mapCell[data-status="2"]{
+    background-color: blue;
+}
+
+.mapCell[data-status="3"]{
+    background-color: red;
+}
+
+
+.btn_blocks{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+}
+
+.btn_blocks button{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.pretty-button {
+    background: linear-gradient(135deg, #6C63FF, #48C6EF); /* degrade bonito */
+    color: #fff; /* texto branco */
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pretty-button:hover {
+    transform: translateY(-3px); /* levanta o botão */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1); /* dá um brilho no hover */
+}

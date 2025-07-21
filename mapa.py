@@ -44,8 +44,6 @@ class Map:
                 label.grid(row=i, column=j, padx=1, pady=1)
                 
 
-    
-
     def imprimeCaminho(self, movimento):
     
         sequencia_movimentos=[]

@@ -22,7 +22,7 @@ def gerar_mapa(nlinhas, ncolunas, janelaConfig):
         if linhas <= 0 or colunas <= 0:
             raise ValueError
     except ValueError:
-        tk.messagebox.showerror("Erro", "Por favor, insira valores numéricos positivos para linhas e colunas.")
+        print("Erro. Por favor, insira valores numéricos positivos para linhas e colunas.")
         return
 
     # Oculta a janela principal

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Maze Solver</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body>
+
+    <div class="section">
+
+        <h1 style="margin-bottom: 20px;">Maze Solver using Genetic Algorithm</h1>
+
+        <div class="div_inputs">
+            <div>
+                <label for="nrows">Rows</label>
+                <input type="number" id="nrows" name="nrows" value="10" />
+            </div>
+            
+            <div>
+                <label for="ncols">Columns</label>
+                <input type="number" id="ncols" name="ncols" value="10" />
+            </div>
+            
+        </div>
+        
+
+        <button class="pretty-button" onclick="create_map()">Create Map</button>
+    </div>
+
+    <div id="map_section" class="section">
+
+        <div id="map_ui">
+
+            <div class="btn_blocks">
+                <button id="btn_selWall" onclick="selectWall(this)" style="border: 3px solid black;">Wall</button>
+                <button id="btn_selStart" onclick="selectStart(this)">Start</button>
+                <button id="btn_selEnd" onclick="selectEnd(this)">End</button>
+            </div>
+
+            <div id="map_container" class="map"></div>
+
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button class="pretty-button" onclick="startAlgorithm()">Start</button>
+        </div>
+
+    </div>
+    
+
+
+
+</body>
+</html>
