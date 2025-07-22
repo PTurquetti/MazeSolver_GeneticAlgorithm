@@ -4,53 +4,137 @@
     <meta charset="UTF-8" />
     <title>Maze Solver</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
-    <script src="controller.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <script src="js/main.js"></script>
+    <script src="js/controller.js"></script>
 </head>
 <body>
 
-    <div class="section">
+    <div class="page_header">
 
-        <h1 style="margin-bottom: 20px;">Maze Solver using Genetic Algorithm</h1>
+        <img src="img/title.jpeg" alt="Maze solver using genetic algorithm by Paulo Turquetti">
 
-        <div class="div_inputs">
-            <div>
-                <label for="nrows">Rows</label>
-                <input type="number" id="nrows" name="nrows" value="10" />
-            </div>
-            
-            <div>
-                <label for="ncols">Columns</label>
-                <input type="number" id="ncols" name="ncols" value="10" />
-            </div>
-            
+        <!-- <button class="pretty-button" onclick="document.querySelector('#map_section').scrollIntoView();">
+            Go to Maze
+        </button> -->
+    </div>
+
+    
+    <div id="div_aboutGenAlgs" class="section" style="gap: 20px; padding-bottom: 0px;">
+        <div class="dropdown_header" onclick="toggleDropdown(this)">
+            <h2>What Is a Genetic Algorithm?</h2>
+            <span class="arrow">▼</span>
         </div>
         
+        <div class="div_content">
 
-        <button class="pretty-button" onclick="create_map()">Create Map</button>
+            <img src="img/GenAlgorithm_Diagram.png" alt="">
+
+            <div class="div_description">
+                <p>A genetic algorithm is a problem-solving method inspired by how natural selection works.</p>
+                <p>Imagine trying to find the best solution to a difficult problem: instead of testing every possibility, this method creates a group of possible solutions (like a population of individuals).</p>
+                <p>These solutions are then combined and slightly changed, similar to how parents pass on traits to their children and how small mutations happen in nature. </p>
+                <p>Over time, the “fittest” solutions survive and improve, getting closer and closer to the ideal answer.</p>
+            </div>
+        </div>
     </div>
+
+    <div id="dib_aboutThisProject" class="section" style="gap: 20px; padding-bottom: 0px;">
+        <div class="dropdown_header" onclick="toggleDropdown(this)">
+            <h2>How Whas This Made?</h2>
+            <span class="arrow">▼</span>
+        </div>
+        
+        <div class="div_content">
+
+            <img src="img/GenAlgorithm_Diagram.png" alt="">
+
+            <div class="div_description">
+                <p>A genetic algorithm is a problem-solving method inspired by how natural selection works.</p>
+                <p>Imagine trying to find the best solution to a difficult problem: instead of testing every possibility, this method creates a group of possible solutions (like a population of individuals).</p>
+                <p>These solutions are then combined and slightly changed, similar to how parents pass on traits to their children and how small mutations happen in nature. </p>
+                <p>Over time, the “fittest” solutions survive and improve, getting closer and closer to the ideal answer.</p>
+            </div>
+        </div>
+    </div>
+
 
     <div id="map_section" class="section">
 
-        <div id="map_ui">
+        <div class="dropdown_header" onclick="toggleDropdown(this)">
+            <h2>Parameters</h2>
+        </div>
 
-            <div class="btn_blocks">
-                <button id="btn_selWall" onclick="selectWall(this)" style="border: 3px solid black;">Wall</button>
-                <button id="btn_selStart" onclick="selectStart(this)">Start</button>
-                <button id="btn_selEnd" onclick="selectEnd(this)">End</button>
+        <div class="div_parameters">
+
+            <div class="div_inputs">
+                <div>
+                    <label for="nrows">Rows</label>
+                    <input type="number" id="nrows" name="nrows" value="10" />
+                </div>
+                
+                <div>
+                    <label for="ncols">Columns</label>
+                    <input type="number" id="ncols" name="ncols" value="10" />
+                </div>
+                
             </div>
 
-            <div id="map_container" class="map"></div>
+            <button id="btn_createMaze" class="pretty-button" onclick="create_maze()">Create Maze</button>
 
         </div>
 
-        <div style="margin-top: 20px;">
-            <button class="pretty-button" onclick="startAlgorithm()">Start</button>
+        <div id="maze_creator">
+
+            <div class="line"></div>
+
+            <div id="map_ui">
+
+                <div class="btn_blocks">
+                    <button id="btn_selWall" onclick="selectWall(this)" style="border: 3px solid black;"><div style="background-color: black;"></div>Wall</button>
+                    <button id="btn_selStart" onclick="selectStart(this)"><div style="background-color: blue;"></div>Start</button>
+                    <button id="btn_selEnd" onclick="selectEnd(this)"><div style="background-color: red;"></div>End</button>
+                </div>
+
+                <div id="map_container" class="map"></div>
+
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button class="pretty-button" onclick="startAlgorithm()">Start</button>
+            </div>
         </div>
 
     </div>
     
 
+
+
+
+
+
+
+    <div id="floater">
+        <a href="https://github.com/PTurquetti/MazeSolver_GeneticAlgorithm" target="_blank">
+            <div class="bot_floater">
+                <i class="fab fa-github" style="font-size: 40px; color: black;"></i>
+            </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/pauloturquetti/" target="_blank">
+            <div class="bot_floater">
+                <i class="fab fa-linkedin" style="font-size: 40px; color: #0077b5;"></i>
+            </div>
+        </a>
+    </div>
+
+
+
+    <div id="loading" onclick="stopLoading()">
+        <div class="spinner"></div>
+    </div>
+    
 
 
 </body>

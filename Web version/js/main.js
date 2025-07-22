@@ -4,7 +4,7 @@ let startCell = null;
 let selectingEnd = false;
 let endCell = null;
 
-function create_map(){
+function create_maze(){
     const rows = document.querySelector("#nrows").value;
     const cols = document.querySelector("#ncols").value;
     const mapContainer = document.querySelector("#map_container");
@@ -32,8 +32,8 @@ function create_map(){
         }
     }
 
-
-    document.querySelector("#map_section").style.display="flex";
+    document.querySelector("#maze_creator").style.display="flex";
+    document.querySelector("#btn_createMaze").innerHTML="Reset Maze"
 }
 
 function switchCellStatus(cell){
@@ -98,3 +98,26 @@ function selectWall(btn){
     document.querySelector("#btn_selEnd").style.border="none";
     btn.style.border = "3px solid black"
 }
+
+function startLoading(){
+    document.querySelector("#loading").style.display="flex";
+}
+
+function stopLoading(){
+    document.querySelector("#loading").style.display="none";
+}
+
+function toggleDropdown(header) {
+    const content = header.nextElementSibling;
+    const arrow = header.querySelector('.arrow');
+
+    content.classList.toggle('open');
+    arrow.classList.toggle('rotate');
+
+    if (content.classList.contains('open')) {
+        content.style.maxHeight = parseInt(content.scrollHeight + 100) + "px";
+    } else {
+        content.style.maxHeight = null;
+    }
+}
+

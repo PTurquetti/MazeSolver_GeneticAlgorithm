@@ -1,4 +1,10 @@
 function startAlgorithm(){
+
+    //get parameters
+    
+
+    startLoading();
+
     const map = document.querySelector("#map_container");
     const cells = map.querySelectorAll("div");
 
@@ -6,15 +12,6 @@ function startAlgorithm(){
 
     let maxRow = 0;
     let maxCol = 0;
-
-    cells.forEach(cell =>{
-        const row = parseInt(cell.dataset.row);
-        const col = parseInt(cell.dataset.col);
-
-        if(row>maxRow) maxRow = row;
-        if(col>maxCol) maxCol = col;
-
-    })
 
     for(let x=0; x<=maxRow; x++){
         matrix[x] = [];
