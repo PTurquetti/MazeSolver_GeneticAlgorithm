@@ -27,7 +27,7 @@ Soon on GitHub Pages!!!<!-- 👉 [**Try it live on GitHub Pages**](https://<SEU_
 
 1. Clone the repository
     ```bash
-    git clone https://github.com/<SEU_USUARIO>/<REPO_NAME>.git
+    git clone https://github.com/PTurquetti/MazeSolver_GeneticAlgorithm.git
     ```
 2. Open `index.html` in your browser
 3. Build your maze, set start and end points, and run the algorithm!
