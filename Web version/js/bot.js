@@ -14,26 +14,26 @@ export class Bot{
         let col = this.currentPos[1];
 
         if (direction === "up") {
-            if (row > 0 && maze.cellMatrix[row - 1][col] === 0) {
+            if (row > 0 && maze.matrix[row - 1][col] === 0) {
                 this.currentPos = [row - 1, col];
             }
         } else if (direction === "down") {
-            if (row < maze.nRows - 1 && maze.cellMatrix[row + 1][col] === 0) {
+            if (row < maze.nRows - 1 && maze.matrix[row + 1][col] === 0) {
                 this.currentPos = [row + 1, col];
             }
         } else if (direction === "left") {
-            if (col > 0 && maze.cellMatrix[row][col - 1] === 0) {
+            if (col > 0 && maze.matrix[row][col - 1] === 0) {
                 this.currentPos = [row, col - 1];
             }
         } else if (direction === "right") {
-            if (col < maze.nCols - 1 && maze.cellMatrix[row][col + 1] === 0) {
+            if (col < maze.nCols - 1 && maze.matrix[row][col + 1] === 0) {
                 this.currentPos = [row, col + 1];
             }
         } else {
             console.log("Unknown movement direction");
         }
 
-        if (this.currentPos[0] === maze.goalPos[0] && this.currentPos[1] === maze.goalPos[1]) {
+        if (this.currentPos[0] === maze.endPos[0] && this.currentPos[1] === maze.endPos[1]) {
             this.reachedGoal = true;
         }
     }

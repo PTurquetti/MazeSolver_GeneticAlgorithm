@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Maze Solver</title>
+    <title>Maze Solver - Genetic Algorithm</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -11,17 +11,12 @@
 <body>
 
     <div class="page_header">
-
         <img src="img/title.jpeg" alt="Maze solver using genetic algorithm by Paulo Turquetti">
-
-        <!-- <button class="pretty-button" onclick="document.querySelector('#map_section').scrollIntoView();">
-            Go to Maze
-        </button> -->
     </div>
 
     
     <div id="div_aboutGenAlgs" class="section" style="gap: 20px; padding-bottom: 0px;">
-        <div class="dropdown_header" onclick="toggleDropdown(this)">
+        <div id="header_aboutGenAlg" class="dropdown_header">
             <h2>What Is a Genetic Algorithm?</h2>
             <span class="arrow">▼</span>
         </div>
@@ -39,8 +34,8 @@
         </div>
     </div>
 
-    <div id="dib_aboutThisProject" class="section" style="gap: 20px; padding-bottom: 0px;">
-        <div class="dropdown_header" onclick="toggleDropdown(this)">
+    <div id="div_aboutThisProject" class="section" style="gap: 20px; padding-bottom: 0px;">
+        <div id="header_aboutThis" class="dropdown_header">
             <h2>How Whas This Made?</h2>
             <span class="arrow">▼</span>
         </div>
@@ -61,18 +56,21 @@
 
     <div id="map_section" class="section">
 
-        <div class="dropdown_header" onclick="toggleDropdown(this)">
+        <div class="dropdown_header">
             <h2>Maze Creator</h2>
         </div>
 
+        <br>
+
         <div class="div_mazeProportions">
 
+            <h3>Map Proportions: </h3>
             <div class="div_inputs">
                 <div>
                     <label for="nrows">Rows</label>
                     <input type="number" id="nrows" name="nrows" value="10" />
                 </div>
-                
+                <p>x</p>
                 <div>
                     <label for="ncols">Columns</label>
                     <input type="number" id="ncols" name="ncols" value="10" />
@@ -115,7 +113,7 @@
                     </div>
 
                     <div class="parameter_line">
-                        <label for="par_mutation">Mutation Rate (%)</label>
+                        <label for="par_mutation">% Mutation Rate</label>
                         <input type="number" id="par_mutation" min="0" max="100" step="1" value="10">
                     </div>
                     
@@ -155,7 +153,7 @@
 
 
 
-    <div id="loading" onclick="stopLoading()">
+    <div id="loading">
         <div class="spinner"></div>
     </div>
     

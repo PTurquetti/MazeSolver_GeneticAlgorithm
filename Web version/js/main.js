@@ -9,7 +9,7 @@ let endCell = null;
 
 
 
-
+//buttons
 const btnCreateMaze = document.getElementById('btn_createMaze');
 btnCreateMaze.addEventListener('click', create_maze);
 
@@ -25,6 +25,12 @@ const btnStart = document.getElementById('btn_start');
 btnStart.addEventListener('click', loadMap);
 
 
+//dropdown menus
+const dropAlgGen = document.getElementById('header_aboutGenAlg');
+dropAlgGen.addEventListener('click', () => toggleDropdown(dropAlgGen));
+
+const dropAboutThis = document.getElementById('header_aboutThis');
+dropAboutThis.addEventListener('click', () => toggleDropdown(dropAboutThis));
 
 
 
@@ -140,7 +146,7 @@ function toggleDropdown(header) {
     arrow.classList.toggle('rotate');
 
     if (content.classList.contains('open')) {
-        content.style.maxHeight = parseInt(content.scrollHeight + 100) + "px";
+        content.style.maxHeight = parseInt(content.scrollHeight + 150) + "px";
     } else {
         content.style.maxHeight = null;
     }
@@ -156,7 +162,7 @@ async function loadMap(){
     const nGenerations = document.querySelector("#par_generation").value;
     const mutationRate = document.querySelector("#par_mutation").value;
     
-    startLoading();
+    
 
     const map = document.querySelector("#map_container");
     const cells = map.querySelectorAll("div");
@@ -179,7 +185,8 @@ async function loadMap(){
 
     console.log(matrix)
 
+    startLoading();
     await runGeneticAlgorithm(nBots, nMovements, nGenerations, mutationRate, nRows, nCols, matrix, startCell, endCell);
-
+    stopLoading();
 }
 
