@@ -94,11 +94,8 @@ label{
     
 }
 
-body .section:last-of-type{
-    margin-bottom: 20px;
-}
 
-.div_parameters{
+.div_mazeProportions{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,8 +127,7 @@ body .section:last-of-type{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap:30px;
+    justify-content: space-between;
 }
 
 .map{
@@ -144,8 +140,8 @@ body .section:last-of-type{
 
 
 .mapCell{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin: 1px 1px;
     border-radius: 4px;
 }
@@ -172,6 +168,7 @@ body .section:last-of-type{
     flex-direction: column;
     justify-content: start;
     gap: 10px;
+    padding: 20px 20px;
 }
 
 .btn_blocks button{
@@ -211,6 +208,28 @@ body .section:last-of-type{
     transform: translateY(-3px); /* levanta o botão */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     filter: brightness(1.1); /* dá um brilho no hover */
+}
+
+.div_parameters{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+.parameter_line{
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+}
+
+.parameter_line label{
+    width: 55%;
+    margin-right: 5%;
+    text-align: end;
+}
+
+.parameter_line input {
+    width: 30%;
 }
 
 #loading{
