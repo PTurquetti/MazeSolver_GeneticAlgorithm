@@ -18,7 +18,7 @@ Soon on GitHub Pages!!!<!-- 👉 [**Try it live on GitHub Pages**](https://<SEU_
 
 - 🧬 Evolutionary algorithm (crossover + mutation)
 - 🕹️ Interactive maze creation
-- 📈 Shows generation-by-generation progress
+- 📈 Shows generation-by-generation progress (soon)
 - ⚡ Runs entirely in-browser, no installation required
 
 
